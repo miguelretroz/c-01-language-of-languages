@@ -14,4 +14,10 @@ int main() {
 
   printf("\n...\n\n");
   printf("Seu chute foi %d\n", guess);
+
+  if (guess == secretNumber) {
+    printf("Parabéns! Voçê acertou!\n");
+  } else {
+    printf("Você errou!\n");
+  }
 }
