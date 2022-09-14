@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define NUMBER_OF_ATTEMPTS 5
+
 int main() {
   printf("****************************************\n");
   printf("*Bem vindo ao nosso jogo de adivinhacão*\n");
@@ -9,8 +11,8 @@ int main() {
 
   int guess;
 
-  for(int i = 1; i <= 3; i++) {
-    printf("\n*** Tentativa %d de 3 ***\n", i);
+  for(int i = 1; i <= NUMBER_OF_ATTEMPTS; i++) {
+    printf("\n*** Tentativa %d de %d ***\n", i, NUMBER_OF_ATTEMPTS);
 
     printf("Qual o seu chute? ");
     scanf("%d", &guess);
