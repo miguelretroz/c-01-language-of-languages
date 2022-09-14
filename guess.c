@@ -18,6 +18,10 @@ int main() {
   if (guess == secretNumber) {
     printf("Parabéns! Voçê acertou!\n");
   } else {
-    printf("Você errou!\n");
+    if (guess > secretNumber) {
+      printf("Seu chute foi maior que o número secreto!\n");
+    } else {
+      printf("Seu chute foi menor que o número secreto!\n");
+    }
   }
 }
