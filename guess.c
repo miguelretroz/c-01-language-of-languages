@@ -9,19 +9,26 @@ int main() {
 
   int guess;
 
-  printf("Qual o seu chute? ");
-  scanf("%d", &guess);
+  for(int i = 1; i <= 3; i++) {
+    printf("\n*** Tentativa %d de 3 ***\n", i);
 
-  printf("\n...\n\n");
-  printf("Seu chute foi %d\n", guess);
+    printf("Qual o seu chute? ");
+    scanf("%d", &guess);
 
-  if (guess == secretNumber) {
-    printf("Parabéns! Voçê acertou!\n");
-  } else {
-    if (guess > secretNumber) {
-      printf("Seu chute foi maior que o número secreto!\n");
+    printf("\nSeu chute foi %d\n", guess);
+
+    if (guess == secretNumber) {
+      printf("Parabéns! Voçê acertou!\n");
+
+      break;
     } else {
-      printf("Seu chute foi menor que o número secreto!\n");
+      if (guess > secretNumber) {
+        printf("Seu chute foi maior que o número secreto!\n");
+      } else {
+        printf("Seu chute foi menor que o número secreto!\n");
+      }
     }
   }
+
+  printf("\n*** Fim de game! ***");
 }
