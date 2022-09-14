@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-#define NUMBER_OF_ATTEMPTS 5
-
 int main() {
   printf("****************************************\n");
   printf("*Bem vindo ao nosso jogo de adivinhacão*\n");
@@ -10,20 +8,19 @@ int main() {
   int secretNumber = 42;
 
   int guess;
+  int numberOfAttempts = 1;
 
-  for(int i = 1; i <= NUMBER_OF_ATTEMPTS; i++) {
-    printf("\n*** Tentativa %d de %d ***\n", i, NUMBER_OF_ATTEMPTS);
+  while(1) {
+    printf("\n****** Tentativa n.º%d ******\n\n", numberOfAttempts);
 
     printf("Qual o seu chute? ");
     scanf("%d", &guess);
 
-    printf("\nSeu chute foi %d\n", guess);
+    printf("\nSeu chute foi %d \n\n", guess);
 
     if (guess < 0) {
       printf("Você não pode chutar números negativos!\n");
       printf("Tente novamente!\n");
-
-      i--;
 
       continue;
     }
@@ -39,7 +36,10 @@ int main() {
         printf("Seu chute foi menor que o número secreto!\n");
       }
     }
+
+    numberOfAttempts++;
   }
 
-  printf("\n*** Fim de game! ***");
+  printf("\nForam realizadas %d tentativas.\n", numberOfAttempts);
+  printf("\n****** Fim de game! ******");
 }
