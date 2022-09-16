@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define INITIAL_POINTS 1000
 
@@ -8,7 +9,8 @@ int main() {
   printf("*Bem vindo ao nosso jogo de adivinhacão*\n");
   printf("****************************************\n");
 
-  int secretNumber = 42;
+  srand(time(0));
+  int secretNumber = rand() % 100;
 
   int guess;
   int numberOfAttempts = 1;
