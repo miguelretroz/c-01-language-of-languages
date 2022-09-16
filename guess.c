@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define INITIAL_POINTS 1000
+
 int main() {
   printf("****************************************\n");
   printf("*Bem vindo ao nosso jogo de adivinhacão*\n");
@@ -9,6 +11,7 @@ int main() {
 
   int guess;
   int numberOfAttempts = 1;
+  int losing_points = 0;
 
   while(1) {
     printf("\n****** Tentativa n.º%d ******\n\n", numberOfAttempts);
@@ -30,6 +33,8 @@ int main() {
 
       break;
     } else {
+      losing_points += (guess - secretNumber) / 2;
+
       if (guess > secretNumber) {
         printf("Seu chute foi maior que o número secreto!\n");
       } else {
@@ -40,6 +45,9 @@ int main() {
     numberOfAttempts++;
   }
 
+  int totalPoints = INITIAL_POINTS - losing_points;
+
   printf("\nForam realizadas %d tentativas.\n", numberOfAttempts);
+  printf("Total de pontos: %d", totalPoints);
   printf("\n****** Fim de game! ******");
 }
