@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define INITIAL_POINTS 1000
 
@@ -33,7 +34,7 @@ int main() {
 
       break;
     } else {
-      losing_points += (guess - secretNumber) / 2.0;
+      losing_points += abs(guess - secretNumber) / 2.0;
 
       if (guess > secretNumber) {
         printf("Seu chute foi maior que o número secreto!\n");
