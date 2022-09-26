@@ -7,17 +7,44 @@
 int main() {
   printf("****************************************\n");
   printf("*Bem vindo ao nosso jogo de adivinhacão*\n");
-  printf("****************************************\n");
+  printf("****************************************\n\n");
 
   srand(time(0));
   int secretNumber = rand() % 100;
 
   int guess;
-  int numberOfAttempts = 1;
+  int attemptsMade = 1;
   double losing_points = 0;
 
+  int level;
   while(1) {
-    printf("\n****** Tentativa n.º%d ******\n\n", numberOfAttempts);
+    printf("Qual o nível de dificuldade?\n");
+    printf("(1)-Fácil (2)-Médio (3)-Difícil\n\n");
+    printf("Escolha: ");
+    scanf("%d", &level);
+
+    if (level == 1 || level == 2 || level == 3) {
+      break;
+    }
+
+    printf("\nOpção inexistente!\n");
+    printf("Tente novamente!\n\n");
+  }
+
+  int attemptsNumber;
+  switch(level) {
+    case 1:
+      attemptsNumber = 20;
+      break;
+    case 2:
+      attemptsNumber = 15;
+      break;
+    default:
+      attemptsNumber = 5;
+  }
+
+  for(int attempt = 1; attempt < attemptsNumber; attempt++) {
+    printf("\n****** Tentativa n.º%d de %d ******\n\n", attempt, attemptsNumber);
 
     printf("Qual o seu chute? ");
     scanf("%d", &guess);
@@ -45,11 +72,12 @@ int main() {
       }
     }
 
-    numberOfAttempts++;
+    attemptsMade++;
   }
   double totalPoints = INITIAL_POINTS - losing_points;
 
-  printf("\nForam realizadas %d tentativas.\n", numberOfAttempts);
-  printf("Total de pontos: %.1f", totalPoints);
-  printf("\n****** Fim de game! ******");
+  printf("\nForam realizadas %d tentativas.\n", attemptsMade);
+  printf("Total de pontos: %.1f\n\n", totalPoints);
+
+  printf("****** Fim de game! ******");
 }
