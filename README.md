@@ -9,6 +9,11 @@
     - C
 </a>
 
+## 📜 Certificado
+<a href = "https://cursos.alura.com.br/user/miguel-retroz/course/introducao-a-programacao-com-c-parte-1/certificate" target="_blank">
+  <img align="center" src="./alura-badge.svg" width="100">
+</a>
+
 ## 👤Contatos
 🔹<a href = "mailto:contato.miguelretroz@gmail.com" target="_blank">
   <img align="center" src="./gmail-logo.svg" width="20">
